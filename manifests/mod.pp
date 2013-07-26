@@ -27,7 +27,7 @@ define apache::mod (
   $mod_package = $mod_packages[$mod] # 2.6 compatibility hack
   if $package {
     $package_REAL = $package
-  } elsif "${mod_package}" {
+  } elsif $mod_package {
     $package_REAL = $mod_package
   }
   if $package_REAL {
