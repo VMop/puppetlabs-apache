@@ -61,6 +61,8 @@ class apache::default_mods (
       'worker': {
         include apache::mod::cgid
       }
+      default {
+        fail("Module ${module_name} is not supported on ${apache::mpm_module}")
     }
     include apache::mod::alias
     include apache::mod::autoindex
